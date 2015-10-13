@@ -107,11 +107,11 @@
 
 %lista de abreviaturas e siglas
 \begin{listofabbrv}{SPMD}
-        \item[SMP] Symmetric Multi-Processor
-        \item[NUMA] Non-Uniform Memory Access
-        \item[SIMD] Single Instruction Multiple Data
-        \item[SPMD] Single Program Multiple Data
-        \item[ABNT] Associação Brasileira de Normas Técnicas
+        \item[IaaS] Infrastructure-as-a-Service
+        \item[PaaS] Plataform-as-a-Service
+        \item[SaaS] Software-as-a-Service
+        \item[DaaS] Data-as-a-Service
+        \item[NIST] National Institute of Standards and Technology
 \end{listofabbrv}
 
 %Sumario
@@ -120,10 +120,22 @@
 \chapter{Computação em Nuvem}
 
 \section{Definição}
-
+	A Nuvem já foi definida de várias formas diferentes. Em (Ref), 22  definições diferentes de nuvem são estudadas e, apartir dessas definições, é proposta uma nova definição que contemple as demais:
+	
+	\begin{quotation}
+		"Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized SLAs (Service-level agreements)."
+	\end{quotation}
+	
+	A NIST (National Institute of Standards and Technology) em (Ref) define a computação em nuvem abaixo:
+	
+	\begin{quotation}
+		"Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e. g., networks, servers, storage, applications and services) that can rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models and four deployment models."
+	\end{quotation}	
+	
+	As 5 características essenciais, os 3 modelos de serviço e os 4 tipos de nuvem citados acima, são descritas nas seções seguintes.		
 
 \section{Características}
-	Em (Ref) a NIST (National Institute of Standards and Technology) define que a Computação em Nuvem é composta de cinco características essenciais. Essas características são descritas abaixo:   
+	Em (Ref) a NIST define que a Computação em Nuvem é composta de cinco características essenciais. Essas características são descritas abaixo:   
 
 \begin{description}
 
@@ -175,9 +187,9 @@ Em \citep{stateOfArt:2010} a arquitetura da computação em Nuvem é divida em quat
 
 \begin{description}
 
-	\item[Camada de Hardware:] Essa camada é responsável pela gestão dos recursos físicos, incluindo servidores, roteadores, switches, sistemas de resfriamento e energia. Na prática, a camada de hardware é tipicamente implementada nos data centers. Um data center normalmente contem milhares e servidores, que são organizados em racks e interconnectados através de switches ou roteadores. Problemas típicos na camada de harware envolvem configuração de hardware, tolerância a falhas, gerenciamento do tráfego, gerenciamento de energia e gerenciamento dos recursos de resfriamento.
+	\item[Camada de Hardware:] essa camada é responsável pela gestão dos recursos físicos, incluindo servidores, roteadores, switches, sistemas de resfriamento e energia. Na prática, a camada de hardware é tipicamente implementada nos data centers. Um data center normalmente contem milhares e servidores, que são organizados em racks e interconnectados através de switches ou roteadores. Problemas típicos na camada de harware envolvem configuração de hardware, tolerância a falhas, gerenciamento do tráfego, gerenciamento de energia e gerenciamento dos recursos de resfriamento.
 
-	\item[Camada de Infraestrutura:] Também conhecida como camada de virtualização, a camada de infraestrutura cria uma pool de armazenamento e recursos computacionais através do particionamento dos recursos físicos utilizando técnologias de virtualização como Xen \cite{Xen:Online}, KVM \cite{KVM:Online} e VMware \cite{VMware:Online}. Como as principais features da computação em nuvem, como alocação dinâmica de recursos, só são possíveis por causa das tecnologias de virtualização, a camada de infraestrutura é considerada um componente essencial na arquitetura.
+	\item[Camada de Infraestrutura:] também conhecida como camada de virtualização, a camada de infraestrutura cria uma pool de armazenamento e recursos computacionais através do particionamento dos recursos físicos utilizando técnologias de virtualização como Xen \cite{Xen:Online}, KVM \cite{KVM:Online} e VMware \cite{VMware:Online}. Como as principais features da computação em nuvem, como alocação dinâmica de recursos, só são possíveis por causa das tecnologias de virtualização, a camada de infraestrutura é considerada um componente essencial na arquitetura.
 
 	\item[Camada de Plataforma:] contruida sobre a camada de infraestrutura, a camada de plataforma consiste em sistemas operacionais e frameworks. O propósito da camada de plataforma é facilitar o deploy[tradução?] de aplicações em máquinas virtuais. Por exemplo o Google App Engine opera na camada de plataforma provendo uma API com suporte para armazenamento e lógica de negócio para aplicações web típicas. 
 
@@ -195,80 +207,29 @@ Em \citep{demystifingCloud:2011} a arquitetura também é dividida em quatro camad
 \label{architecture2}
 \end{figure}
 
-\subsection{Uma subseção}
+\section{Tipos de Nuvem}
 
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
+	Em (ref) e (ref) 4 tipos de nuvem são descritos: Nuvem Pública, Nuvem Privada, Nuvem Híbrida e Nuvem Comunitária.
 
+	\begin{description}
+	
+		\item[Nuvem Pública:] nuvem onde os provedores de serviços oferecem seus recursos como serviços ao público geral. Nuvens publicas oferecem vários benefícios aos provedores de serviço, por exemplo, não é necessários para os provedores investimentos inciais em infraestrutura. No entanto, as nuvens públicas oferecem um baixo grau de controle sobre os dados, a rede e as configurações de segurança.  	 
+			
+		\item[Nuvem Privada:] também conhecida como nuvem interna, as nuvens privadas são para uso exclusivo de uma organização. A nuvem privada pode ser construida e gerenciada pela própria empresa ou por provedores externos. Esse tipo de nuvem oferece um maior controle de performace, segurança e confiabilidade. No entanto, as nuvens privadas são criticadas por serem muito similares aos servidores tradicionais.
+		
+		\item[Nuvem Híbrida:] uma nuvem híbrida é a combinação da nuvem privada e da nuvem pública, na tentativa de minimizar as limitações das duas abordagens. Nesse tipo de nuvem, parte dos serviços de infraestrutura estão na nuvem privada enquanto que as outras partes são executadas em uma nuvem pública. Nuvens hibridas oferecem mais flexibilidade que as nuvens públicas e do que as nuvens privadas. Elas oferecem mais controle sobre dados, rede e segurança do que as nuvens públicas mantendo as facilidades de expansão.
+		
+		\item[Nuvem Comunitária:] a nuvem comunitária funciona praticamente como uma nuvem privada que pode ser utilizada por duas ou mais organizações. Ela pode ser gerenciada tanto por uma organização, pelas duas organizações, ou por um provedor.
+		 	
+	\end{description}
+	
 \section{Desafios}
 
 \chapter{Desenvolvimento}
 
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla~\ref{tabela2}.
-
-\begin{table}
-\begin{center}
-\caption{Nome da Tabela}\label{tabela2}
-\begin{tabular}{p{4cm}p{5cm}p{6cm}}
-\hline
-Blabla & Blabla & Blablabla\\
-\hline
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla. Conforme a figura~\ref{figura}}\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{figure}[htbp]
-  \centering \includegraphics[scale=.4]{imgs/business-model.png}
-\caption{Nome da figura} 
-\label{figura}
-\end{figure}
-
 
 \chapter{Conclusão}
 
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
-
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
 
 % Bibliografia
 % http://liinwww.ira.uka.de/bibliography/index.html
@@ -283,43 +244,9 @@ Blabla & Blabla & Blablabla\\
 \annex 
 \chapter{Um Anexo}
 
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
-
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
 
 \chapter{Outro Anexo}
 
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
-
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
-  blabla blablabla bla.  Bla blabla blablabla bla.
 
 \end{document}
 
