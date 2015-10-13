@@ -1,0 +1,325 @@
+\documentclass[ti]{texufpel}
+
+\usepackage[latin1]{inputenc} % acentuacao
+\usepackage{graphicx} % para inserir figuras
+\usepackage{url}
+
+\unidade{Centro de Desenvolvimento Tecnológico}
+\programa{Programa de Pós-Graduação em Computação}
+\curso{Ciência da Computação}
+
+\title{Um Blabla Blablabla com Aplicações em Blablabla}
+
+\author{Ataides}{Vítor Alano de}
+\advisor[Prof.~Dr.]{Pilla}{Maurício Lima}
+\coadvisor[Prof.~Dr.]{Pilla}{Laércio Lima}
+
+\keyword{palavrachave-um}
+\keyword{palavrachave-dois}
+\keyword{palavrachave-tres}
+\keyword{palavrachave-quatro}
+
+\begin{document}
+
+%\renewcommand{\advisorname}{Orientadora}           %descomente caso tenhas orientadora
+%\renewcommand{\coadvisorname}{Coorientadora}      %descomente caso tenhas coorientadora
+
+\maketitle 
+
+\sloppy
+
+\fichacatalografica
+
+%Opcional
+\begin{dedicatoria}
+  Dedico\ldots bla blabla blablabla bla. Bla blabla blablabla bla.\\
+  Bla blabla blablabla bla. Bla blabla blablabla bla.
+\end{dedicatoria}
+
+%Opcional
+\begin{agradecimentos}
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.    Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+\end{agradecimentos}
+
+%Opcional
+\begin{epigrafe}
+	Sua dissertação está muito fraca. \\
+	Você não escreveu nem 20 linhas. \\
+  {\sc --- Professora de português do ensino médio}
+\end{epigrafe}
+
+%Resumo em Portugues (no maximo 500 palavras)
+\begin{abstract}
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+\end{abstract}
+
+\begin{englishabstract}%
+  {Titulo do Trabalho em Ingles}%
+  {keyword-one, keyword-two, keyword-three, keyword-four}
+  
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+\end{englishabstract}
+
+%Lista de Figuras
+\listoffigures
+
+%Lista de Tabelas
+\listoftables
+
+%lista de abreviaturas e siglas
+\begin{listofabbrv}{SPMD}
+        \item[SMP] Symmetric Multi-Processor
+        \item[NUMA] Non-Uniform Memory Access
+        \item[SIMD] Single Instruction Multiple Data
+        \item[SPMD] Single Program Multiple Data
+        \item[ABNT] Associação Brasileira de Normas Técnicas
+\end{listofabbrv}
+
+%Sumario
+\tableofcontents
+
+\chapter{Computação em Nuvem}
+
+\section{Definição}
+
+
+\section{Características}
+	Em (Ref) a NIST (National Institute of Standards and Technology) define que a Computação em Nuvem é composta de cinco características essenciais. Essas características são descritas abaixo:   
+
+\begin{description}
+
+	\item[Auto-atendimento sob demanda:] Um cliente da nuvem pode alocar recursos como processamento e armazenamento, sem que para isso seja necessário qualquer interação humana humana.
+	
+	\item[Amplo acesso a rede:] Os recursos da nuvem devem estar disponíveis através da rede e podem ser acessados por mecanismos que permitam o acesso por uma gama heterogênea de plataformas como celulares, tablets e notebooks.
+	
+	\item[Pooling de recursos:] Os recursos computacionais do provedor estão agrupados para servir a multiplos consumidores, utilizando um modelo multi-tenancy, onde diferentes recursos fisicos e virtuais são dinamicamente alocados e desalocados de acordo com a demanda do consumidor. Existe um senso de independência de localização que significa que o consumidor não tem controle nem conhecimento da localização exata dos recursos alocados.
+	
+	\item[Elasticidade rápida:] Os recursos podem ser elasticamente provisionados, ou seja, quando é necessário mais recursos eles são alocados de forma automática e quando desnecessários esses recursos são desalocados, dando a idéia de que os recursos são ilimitados.
+	
+	\item[Serviços mensurados:] A nuvem deve ter a capacidade de controlar e otimizar a utilização dos recursos. Dessa forma a utilização dos recursos pode ser monitorada, controlada e reportada, tornando seu uso transparente tanto para o provedor quanto para o consumidor .
+
+\end{description} 
+
+
+
+\section{Modelo Negócio}
+A computação em nuvem implementa um modelo de negócio orientado a serviços. Em outras palavras, os recursos de hardware e recursos a nível de plataforma são oferecidos como serviços sob demanda. De acordo com \citep{stateOfArt:2010} os serviços oferecidos pelas nuvens podem ser agrupados em três categorias: infrastructure as a service (IaaS), platform as a service (PaaS) e software as a service (SaaS).
+
+\begin{description}
+
+\item[Infrastructure as a Service:] IaaS se refere ao provisionamento sob demanda dos recursos de infraestrutura, normalmente VMs. O dono de uma nuvem que oferece IaaS é chamado de provedor IaaS. Amazon EC2 \cite{AmazonEC2:Online}, GoGrid \cite{GoGrid:Online} e FlexiScale \citep{Aguiar:2005}e{FlexiScale:Online} são exemplos de provedores Iaas.
+
+\item [Platform as a Service:] PaaS se refere ao provisionamento de recursos de plataforma, como sistemas operacionais e frameworks de desenvolvimento de software. Exemplos de provedores PaaS são: Google App Engine \cite{GoogleAppEngine:Online}, Microsoft Windows Azure \cite{MicrosoftAzure:Online} e Salesforce \cite{Salesforce:Online}.
+
+\item[Software as a Service:] Saas se refere ao provisionamento de aplicações sob demanda. Exemplos de provedores SaaS incluem: Rackspace \cite{Rackspace:Online} e SAP Business By Design \cite{SAP:Online}.
+
+\end{description}
+
+O modelo de negócio da computação em nuvem é apresentado na Figura \ref{business-model}. De acordo com a arquitetura em camadas danuvem é totalmente possível que um provedor PaaS funcione sobre um provedor IaaS. Porém o que é muito comum atualmente é que a mesma organização seja o provedor PaaS e IaaS, como a Google e a SalesForce.com. Por esse motivo provedores PaaS e IaaS são frequentemente chamados de provedores de infraestrutura ou provedores de nuvem.
+
+\begin{figure}[htbp]
+  \centering \includegraphics[scale=.6]{imgs/business-model.png}
+\caption{Modelo de negócio da computação em nuvem} 
+\label{business-model}
+\end{figure}
+
+
+\section{Arquitetura}
+
+Em \citep{stateOfArt:2010} a arquitetura da computação em Nuvem é divida em quatro camadas: a camada de hardware, a camada de infraestrutura, a camada de plataforma e a camada de aplicação, como apresentado na Figura \ref{architecture1}. Que são detalhadas abaixo:
+
+\begin{figure}[htbp]
+  \centering \includegraphics[scale=.4]{imgs/architecture1.png}
+\caption{Arquitetura da Computação em Nuvem segundo \citep{stateOfArt:2010}} 
+\label{architecture1}
+\end{figure}
+
+\begin{description}
+
+	\item[Camada de Hardware:] Essa camada é responsável pela gestão dos recursos físicos, incluindo servidores, roteadores, switches, sistemas de resfriamento e energia. Na prática, a camada de hardware é tipicamente implementada nos data centers. Um data center normalmente contem milhares e servidores, que são organizados em racks e interconnectados através de switches ou roteadores. Problemas típicos na camada de harware envolvem configuração de hardware, tolerância a falhas, gerenciamento do tráfego, gerenciamento de energia e gerenciamento dos recursos de resfriamento.
+
+	\item[Camada de Infraestrutura:] Também conhecida como camada de virtualização, a camada de infraestrutura cria uma pool de armazenamento e recursos computacionais através do particionamento dos recursos físicos utilizando técnologias de virtualização como Xen \cite{Xen:Online}, KVM \cite{KVM:Online} e VMware \cite{VMware:Online}. Como as principais features da computação em nuvem, como alocação dinâmica de recursos, só são possíveis por causa das tecnologias de virtualização, a camada de infraestrutura é considerada um componente essencial na arquitetura.
+
+	\item[Camada de Plataforma:] contruida sobre a camada de infraestrutura, a camada de plataforma consiste em sistemas operacionais e frameworks. O propósito da camada de plataforma é facilitar o deploy[tradução?] de aplicações em máquinas virtuais. Por exemplo o Google App Engine opera na camada de plataforma provendo uma API com suporte para armazenamento e lógica de negócio para aplicações web típicas. 
+
+	\item[Camada de Aplicação:] no level mais alto da hierarquia, a camada de aplicação consiste nas aplicações da nuvem. Diferentes das aplicações tradicionais, as aplicações da nuvem fazem uso da feature de escalonamento-automático para alcançar uma melhor performace, disponibilidade e baixo custo de operação.
+
+\end{description}
+
+Comparado aos ambientes de hospedagem de serviços tradicionais como servidores dedicados, a arquitetura da nuvem é mais modular. Cada camada é fracamente acoplada, com camadas acima e abaixo, permitindo que cada camada evolua separadamente. Essa modularidade permite que a computação em nuvem de suporte a uma gama de requerimentos das aplicações enquanto reduz o overhead de manutenção e de administração.
+
+Em \citep{demystifingCloud:2011} a arquitetura também é dividida em quatro camadas com uma hierarquia baseada na abstração, porém a arquitetura é definida diretamente ligada aos modelos de negócio, como pode ser observado na Figura \ref{architecture2}. Nessa definição é adicionando um novo modelo de negócio: dados como serviço, que é descrito como o serviço que oferece base de dados para armazenamento das informações do cliente. 
+
+\begin{figure}[htbp]
+  \centering \includegraphics[scale=.6]{imgs/architecture2.png}
+\caption{Arquitetura da Computação em Nuvem segundo \citep{demystifingCloud:2011}} 
+\label{architecture2}
+\end{figure}
+
+\subsection{Uma subseção}
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+\section{Desafios}
+
+\chapter{Desenvolvimento}
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla~\ref{tabela2}.
+
+\begin{table}
+\begin{center}
+\caption{Nome da Tabela}\label{tabela2}
+\begin{tabular}{p{4cm}p{5cm}p{6cm}}
+\hline
+Blabla & Blabla & Blablabla\\
+\hline
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla.}\\
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla.}\\
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla.}\\
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla.}\\
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla.}\\
+{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
+  blablabla blabla blablabla. Conforme a figura~\ref{figura}}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering \includegraphics[scale=.4]{imgs/business-model.png}
+\caption{Nome da figura} 
+\label{figura}
+\end{figure}
+
+
+\chapter{Conclusão}
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+% Bibliografia
+% http://liinwww.ira.uka.de/bibliography/index.html
+% um site que cataloga no formato bibtex a bibliografia em computacao
+%\bibliography{nomedoarquivo.bib} (sem extensao)
+%\bibliographystyle{formato.bst} (sem extensao)
+
+\bibliography{bibliografia}
+\bibliographystyle{abnt}
+
+% Anexos (Opcional)
+\annex 
+\chapter{Um Anexo}
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+\chapter{Outro Anexo}
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+  bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+  blabla blablabla bla.  Bla blabla blablabla bla.
+
+\end{document}
+

@@ -1,0 +1,16 @@
+\select@language {brazilian}
+\select@language {english}
+\select@language {brazilian}
+\contentsline {chapter}{\numberline {1}Computa\c c\~ao em Nuvem}{11}
+\contentsline {section}{\numberline {1.1}Defini\c c\~ao}{11}
+\contentsline {section}{\numberline {1.2}Caracter\IeC {\'\i }sticas}{11}
+\contentsline {section}{\numberline {1.3}Modelo Neg\'ocio}{12}
+\contentsline {section}{\numberline {1.4}Arquitetura}{12}
+\contentsline {subsection}{\numberline {1.4.1}Uma subse\c c\~ao}{15}
+\contentsline {section}{\numberline {1.5}Desafios}{15}
+\contentsline {chapter}{\numberline {2}Desenvolvimento}{16}
+\contentsline {chapter}{\numberline {3}Conclus\~ao}{18}
+\contentsline {chapter}{Refer{\^e}ncias}{19}
+\setbox \@tempboxa \hbox {{{\sffamily \textbf {\MakeUppercase {Anexo} }}}}\ei@chapnumindent \wd \@tempboxa \setbox \@tempboxa \box \voidb@x \advance \ei@chapnumindent 1.8em\relax 
+\contentsline {chapter}{\numberline {\MakeUppercase {Anexo} A}Um Anexo}{21}
+\contentsline {chapter}{\numberline {\MakeUppercase {Anexo} B}Outro Anexo}{22}
