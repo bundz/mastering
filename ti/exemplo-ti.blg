@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: exemplo-ti.aux
 The style file: abnt.bst
 Database file #1: bibliografia.bib
-You've used 15 entries,
+You've used 20 entries,
             2334 wiz_defined-function locations,
-            655 strings with 5643 characters,
-and the built_in function-call counts, 8891 in all, are:
-= -- 768
-> -- 17
-< -- 160
-+ -- 491
-- -- 22
-* -- 527
-:= -- 780
-add.period$ -- 52
-call.type$ -- 15
-change.case$ -- 100
-chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 1147
-empty$ -- 647
-format.name$ -- 119
-if$ -- 1826
+            698 strings with 6911 characters,
+and the built_in function-call counts, 15492 in all, are:
+= -- 1377
+> -- 65
+< -- 320
++ -- 902
+- -- 62
+* -- 1033
+:= -- 1420
+add.period$ -- 76
+call.type$ -- 20
+change.case$ -- 201
+chr.to.int$ -- 74
+cite$ -- 20
+duplicate$ -- 1908
+empty$ -- 952
+format.name$ -- 260
+if$ -- 3055
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 33
-num.names$ -- 75
-pop$ -- 248
+newline$ -- 43
+num.names$ -- 101
+pop$ -- 361
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 20
 quote$ -- 0
-skip$ -- 488
+skip$ -- 780
 stack$ -- 0
-substring$ -- 396
-swap$ -- 756
+substring$ -- 795
+swap$ -- 1383
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
+type$ -- 111
 warning$ -- 0
-while$ -- 90
+while$ -- 130
 width$ -- 0
-write$ -- 17
+write$ -- 22

@@ -118,15 +118,19 @@
 \tableofcontents
 
 \chapter{Computação em Nuvem}
+Apesar do hype atual da Computação em Nuvem, o seu conceito não é novo e tão pouco suas técnologias \cite{CloudUncovered:2012}. Acredita-se que o o conceito de Computação em Nuvem é o mesmo que John McCarthy, em 1960, se referia a habilidade de prover e organizar computação como "commodity". 
+
+Este capítulo é dividio em 6 seções, na primeira seção são apresentados as principais definições de computação em nuvem. Na segunda seção são apresentadas suas principais características. Na terceira seção, os modelos de negócio posibilitados pela nuvem são explicados. Na quarta seção é feita uma análise da arquitetura da nuvem. Na quinta seção é feita uma revisão dos os tipos de nuvem. Por fim, na sexta seção os principais desafios da área são apresentados. 
+
 
 \section{Definição}
-	A Nuvem já foi definida de várias formas diferentes. Em (Ref), 22  definições diferentes de nuvem são estudadas e, apartir dessas definições, é proposta uma nova definição que contemple as demais:
+	A Nuvem já foi definida de várias formas diferentes. Em \cite{CloudDefinition:2009}, 22  definições diferentes de nuvem são estudadas e, apartir dessas definições, é proposta uma nova definição que contemple as demais:
 	
 	\begin{quotation}
 		"Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized SLAs (Service-level agreements)."
 	\end{quotation}
 	
-	A NIST (National Institute of Standards and Technology) em (Ref) define a computação em nuvem abaixo:
+	A NIST (National Institute of Standards and Technology) em \cite{NIST:2011} define a computação em nuvem abaixo:
 	
 	\begin{quotation}
 		"Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e. g., networks, servers, storage, applications and services) that can rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models and four deployment models."
@@ -135,7 +139,7 @@
 	As 5 características essenciais, os 3 modelos de serviço e os 4 tipos de nuvem citados acima, são descritas nas seções seguintes.		
 
 \section{Características}
-	Em (Ref) a NIST define que a Computação em Nuvem é composta de cinco características essenciais. Essas características são descritas abaixo:   
+	Em \cite{NIST:2011} a NIST define que a Computação em Nuvem é composta de cinco características essenciais. Essas características são descritas abaixo:   
 
 \begin{description}
 
@@ -209,7 +213,7 @@ Em \citep{demystifingCloud:2011} a arquitetura também é dividida em quatro camad
 
 \section{Tipos de Nuvem}
 
-	Em (ref) e (ref) 4 tipos de nuvem são descritos: Nuvem Pública, Nuvem Privada, Nuvem Híbrida e Nuvem Comunitária.
+	Em \citep{stateOfArt:2010} e \cite{NIST:2011} 4 tipos de nuvem são descritos: Nuvem Pública, Nuvem Privada, Nuvem Híbrida e Nuvem Comunitária.
 
 	\begin{description}
 	
@@ -224,6 +228,34 @@ Em \citep{demystifingCloud:2011} a arquitetura também é dividida em quatro camad
 	\end{description}
 	
 \section{Desafios}
+
+	Apesar da Computação em Nuvem estar amplamente presente na indústria, as pesquisas nesta área ainda estão em fase inicial \cite{stateOfArt:2010}.  Muitos problemas existentes ainda não foram resolvidos, enaquantos novos desafios continuam surgindo das aplicações nas indústrias. Essa seção apresenta um resumo dos principais desafios da Computação em Nuvem. 
+	
+	\subsection{Provisionamento Automático de Serviço}
+	Umas das principais características da Computação em Nuvem é a capacidade de adquirir e liberar recursos sob demanda. O objetivo de um provedor de serviço neste caso é de alocar e desalocar recursos da nuvem a fim de satisfazer os service level objectives (SLOs), enquanto minimiza o custo operacional.  No entanto, não é óbvio como o provedor de serviço alcançará esse objetivo. Em particular, não é fácil de determinar como mapear SLOs tais como requisitos de QoS para requisitos dos recursos de baixo nível como requisitos de CPU e de memória. Além disso, para alcançar alta agilidade para responder as flutuações de demanda, as decições de provisionamento devem ser feitas em tempo real.
+	
+	\subsection{Migração de Máquinas Virtuais}
+	A virtualização é uma das principais tecnologias utilizadas em infraestruturas em nuvem. Através do uso da virtualização, é possível compartilhar a mesma máquina física com múltiplos sistemas operacionais e/ou aplicações de usuários finais, promovendo o isolamento entre os mesmos. Da mesma forma, o seu uso torna possível realizar balanceamento de carga entre estruturas físicas, através de ações como a migração de máquinas virtuais entre servidores.
+	
+	A migração de VMs evoluiu das técnicas de migração de processos \cite{Osman:2002}. Algumas ferramentas já implementam o conceito de live-migration, onde as VMs são movidas em um processo que envolve paradas extremamente curtas que variam de dezenas de milissegundos a um segundo. Clark et al. \cite{Clark:2005} mostra que a migração de um SO inteiro e todas suas aplicações como uma unidade permite que muitas das dificuldades encontradas nas abordagens de migração de processos sejam evitadas.
+	 
+	O maior benefício da migração de VMs é a capacidade de evitar a sobrecarga de pontos específicos da infraestrutura de servidores, no entanto essa não é uma tarefa simples. Atualmente, a detecção de pontos de sobrecarga e o disparo de uma migração não tem agilidade suficiente para responder às mudanças de carga de trabalho repentinas. Além disso, é necessário transferir o estado dos dados em memória de forma consistente e eficiente, considerando os recursos para as aplicações e para os servidores físicos. 
+	
+	\subsection{Consolidação de Servidores}
+	A consolidação de servidores é uma abordagem que tem como objetivo maximizar a utilização de recursos enquanto minimiza o consumo de energia. A técnica de migração de VMs é frequentemente utilizada na consolidação de servidores, onde VMs são movidas de multiplos servidores sub-utilizados para um servidor. Dessa forma os servidores restantes são colocados no estado de economia de energia. O problema de consolidar servidores de forma ótima pode ser visto como uma variação do problema bin-packing \cite{Chekuri:1999}, que é um problema de otimização NP-dificil.
+	
+	\subsection{Gerenciamento de Energia}
+	Atingir uma maior eficiência no consumo de energia também é um dos principais desafios da computação em nuvem. Em \cite{Hamilton} foi estima que o custo de powering(tradução) e refrigeração somam 53 por cento dos gastos operacionais dos data centers. Em 2006, os data centers nos Estados Unidos consumiram mais de 1.5 porcento de toda energia gerada naquele ano, e o crescimento dessa porcentagem tem projeção de crescimento de 18 porcento ao ano. O que leva a uma enorme pressão sobre os provedores de infraestrutura à reduzir o consumo energético. O Objetivo não é apenas reduzir o gasto energético, mas também se adequar aos regulamentos do governo e as normas ambientais. 
+	
+	\subsection{Segurança dos Dados}
+	A segurança dos dados é outro tópico de pesquisa muito importante na computação em nuvem. Visto que os provedores dos serviços tipicamente não têm acesso aos sistemas de segurança dos data centers, eles dependem do provedor de infraestrutura para garantir a segurança de seus dados. Os provedores de infraestrutura devem garantir:
+	\begin{description}
+		\item[Confidencialidade] para as transfêrencias e acessos a dados.
+		\item[Auditabilidade] para atestar se as configurações de segurança de uma aplicação foram modificadas ou não.  
+	\end{description}	 
+	
+	Confidencialidade é normalmente alcançada utilizando protocolos de criptografia, enquanto que a auditibilidade é alcançada utilizando técnicas de atestado remoto. Atestados remotos tipicamente necessitam de um trusted platform module (TPM) para gerar um sumário do sistema infalsificável como prova da segurança do sistema. Porém num ambiente como a nuvem onde as VMs podem migrar dinâmicamente de um servidor para outro, utilizar atestado remoto não é o suficiente. É necessário que seja criado um mecânismo confiável em cada camada da arquitetura. Inicialmente, para ser confiável, a camada de hardware deve usar um TPM. A camada de infraestrutura, resposável pela migração das VMs, deve utilizar monitores de VMs confiáveis. A migração de VMs só deve ser permitida se tanto o servidor de destino quanto fonte são confiáveis.
+
 
 \chapter{Desenvolvimento}
 
