@@ -1,7 +1,7 @@
 LATEX = pdflatex
 BIBTEX = bibtex
 RM = rm -f
-FILE = exemplo-diss
+FILE = exemplo-ti
 
 all:	
 		$(LATEX) $(FILE)
