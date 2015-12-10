@@ -1,5 +1,10 @@
 all:
-	pdflatex exemplo-ti.tex
-	bibtex exemplo-ti
-	pdflatex exemplo-ti.tex
-	pdflatex exemplo-ti.tex
+	pdflatex ti.tex
+	bibtex ti
+	pdflatex ti.tex
+	pdflatex ti.tex
+	rm ti.lof
+	rm ti.log
+	rm ti.blg
+	rm ti.aux
+	rm ti.lot
