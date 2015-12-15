@@ -1,0 +1,158 @@
+\chapter{Plataformas da Nuvem de Código Aberto}
+
+As Plataformas da Nuvem de Código Aberto foram criadas com a intenção de suprir a necessidade de que as soluções IaaS forneçam privacidade e controle sobre os ambientes virtualizados (REF). Portanto essas plataformas eram usadas principalmente para contruir Nuvens privadas. Atualmente elas são utilizadas para Nuvens públicas, privadas e hibridas. Com o aparecimento de diferentes Plataformas da Nuvem de Código Aberto, mesmo tendo as caracteristicas específicas de cada plataforma, escolher a mais adequada é uma tarefa complicada (REF).
+
+Muitos trabalhos foram desenvolvidos com objetivos de comparar as diferentes soluções para IaaS. A tabela (REF) apresenta os trabalhos que comparam as soluções para nuvem, destacando as soluções analisadas, suas limitações e foco.
+
+%%TABELA A FAZERRR
+\begin{tabular}{|l | p{5.5cm} | p{5.5cm}|}
+	\hline
+	Trabalho & Plataformas Analisadas & Foco/Limitação \\
+	Voras et. al.(REF) & OpenNebula, Eucalyptus, Ubuntu Enterprise Cloud, openQRM, Abiquo, Red Hat Cloud Foundations, OpenStack, Nimbus and mOSAIC & Breve introdução sobre cada solução, nenhuma comparação fornecida.
+	\tabularnewline
+
+\end{tabular}
+
+Alguns trabalhos analizaram algumas soluções mais profundamente considerando um ponto de vista específico. (REF) foca na aparência e nas features, enquanto que (REF) foca em comparar a escalabilidade das plataformas e (REF) nas placement policies, arquitetura das plataformas e na estrutura de rede das plataformas analisadas. (REF) detalha sobre o OpenStack e o CloudStack, porém apenas o OpenStack é analisado profundamente.
+
+Esse capítulo tem como objetivo analisar 5 soluções de código aberto para IaaS: OpenStack, CloudStack, OpenNebula, Eucalyptus e Nimbus e comparar suas características.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{OpenStack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+OpenStack é um software pra Nuvem que oferece a capacidade de controlar uma enorme quantidade de recursos de computação, de rede e de armazenamento. Ele ainda prove ao usuário recursos sob demanda (REF). O desenvolvimento do OpenStack começou em 2010, inicialmente sendo desenvolvido pela Rackspace Hosting e pela NASA (REF) com o objetivo de prover uma solução de código aberto para construção de Nuvens privadas. A missão do OpenStack é permitir que qualquer organização crie e ofereça serviços de Computação em Nuvem. Disponível como uma solução de código aberto, o OpenStack foi construido com 4 princípios em mente:
+
+\begin{description}
+
+	\item[\textit{Open Source}:] todo código é públicado sob a licença Apache 2.0, permitindo a comunidade a utiliza-lo livremente.
+
+	\item[\textit{Open Design}:] a cada 6 meses a comunidade de desenvolvimento realizam um \textit{design summit} para recolher requerimentos e escrever especificações para as próximas versões.
+
+	\item[\textit{Open Development}:] durante toda faze de desenvolvimento de uma nova versão é mantindo públicamente em um repositório o código fonte.
+
+	\item[\textit{Open Community}:] manter as comunidades  de desenvolvimento e de usuários engajadas através de um processo aberto e transparente.   
+
+\end{description}
+
+A primeira versão do OpenStack se chamava Austin e foi lançada em outubro de 2010. Desde então o OpenStack adotou uma politica de realizar 2 lançamentos grandes por ano, totalizando 12 lançamentos até hoje (o próximo será o Mikata, esperado para fevereiro de 2016). O versão Austin continha apenas o componente de armazenamento de objetos (Swift) e o componente de computação (Nova) e apresentava restrições importantes como suporte limitado a objetos de 5GB. O suporte a objetos maiores foi introduzido na segunda versão, chamado Bexar, junto com o serviço de registro de imagem e o serviço de entrega (Glance). Após isso, novos modulos foram introduzidos apenas na quinta versão, chamada de Essex, que introduziu uma interface gráfica para o usuário (Horizon) e um componente de segurança (Keystone). A sexta versão, Folsom, trouxe a rede como um dos projetos principais do OpenStack (antigamente chamado de Quantum, atualmente chamado de Neutron) e um componente de armazenamento de bloco (Cinder). Folsom foi a primeira versão a encorporar os três mais importantes módulos do OpenStack: Swift, Nova e Neutron. Apartir dessa versão os módulos existentes foram fixados e melhorados e alguns serviços compartilhados novos foram adicionados como: serviço de telemetria (Ceilometer) e serviço de orquestração (Heat), foram lançados na oitava versão, Havana. Na nona versão, Icehouse, foi lançado um serviço de banco de dados (Trove). O serviço de processamento de dados (Sahara) foi lançado na décima versão, Juno. Na décima primeira versão, Kilo, foi introduzido o serviço de \textit{bare metal} (Ironic). Na mais nova versão, Liberty, foi lançado um serviço de busca (Searchlight).
+
+\subsection{Arquitetura Base}
+
+Como em qualquer outro plataforma para Nuvem, a infraestrutura por baixo do OpenStack é formada por hardware padrão, que pode conter qualquer peça de dispositivos físicos como servidores, discos ou dispositivos de rede. No intuito de prover serviços na nuvem, o OpenStack desenvolveu camadas de virtualização, promovendo uma abstração da infraestrutura física para o usuário final. Essas camadas de virtualização são desenvolvidas numa arquitetura multicomponente.
+
+A arquitetura do OpenStack consiste em 3 componentes principais: computação (Nova), rede (Neutron) e armazenamento (Swift). Além desses 3 componentes, o OpenStack vem desenvolvendo muitos outros serviços, projetados para trabalharem juntos para prover uma solução IaaS completa. A integração desses serviços é facilitada através de APIs (\textit{application programming interfaces}) que são fornecidas por cada serviço (REF).
+
+\subsubsection{Computação (Nova)}
+
+O componente de computação, de codinome Nova e escrito em Python, é responsável por gerenciar grandes redes de VMs e eventualmente por escalonar as VMs entre as máquinas físicas disponíveis (REF). O Nova é uma aplicação distribuída que consiste em 6 componentes: Nova-api, Message Queue, Nova-Compute, Nova-Network, Nova-Volume e Nova-Scheduler. O Nova suporta o ciclo-de-vida completo de uma instância na Nuvem, desde a requisição para inicializar uma VM até seu término. Os seis componentes são detalhados abaixo:
+
+\begin{description}
+
+	\item[Nova-api:] aceita e responde as chamadas do usuário de computação do usuário final pela API. Além de prover sua própria API, o Nova-api é compatível com a API da Amazon EC2, oferecendo o potencial de integração com os serviços de Nuvem da Amazon. Esse componente lida com a organização das atividades como: executar uma instância e aplicação de políticas de execução.
+
+	\item[Nova-compute:] é responsável por criar e terminar as instâncias de VM através das APIs do hypervisor. OpenStack suporta vários hypervisors capacidade de aceitar outros hypervisor através de sua biblioteca padrão.
+
+	\item[Nova-volume:] gerencia a criação, a ligação e a desligação de volumes persistentes para instâncias de computação. Existem dois tipos de armazenamentos suportados por uma VM: (1) Armazenamento Efêmero, que é associada com uma unica instância. Um bloco de armazenamento efêmero é conectado ao ciclo-de-vida de uma instancia, quando essa instância terminar os dados são deletados; (2) Armazenamento de Volume: é persistente e independente de qualquer instância particular. 
+
+	\item[Nova-network:] responsável por todas tarefas relacionadas a rede. Tarefas como trocar a as regras da tabela de ips ou setar as interdaces de \textit{bridge}.
+
+	\item[Nova-schedule:] responsável pelo escalonamento de VMs entre as máquinas físicas. Enquanto os algoritmos de escalonamento podem ser definidos pelo usuário, o Nova-schedule suporta por padrão 3 algoritmos: (1) Simple: tenta encontrar o \textit{host} mais livre, (2) Chance: escolhe um \textit{host} aleatório disponível da tabela de serviço, (3) Zone: escolhe um \textit{host} aleatório em uma zona disponível. Ao permitir que os usuários definam seus próprios algoritmos de balanceamento faz desse componente muito importante para a construção de um sistema tolerante a falhas e com balanceamento de carga.
+
+	\item[Queue:] é uma central para a passagem de mensagens entre os componentes. É normalmente implementado com RabbitMQ, mas suporta outros tipos de fila de mensagens.
+
+	\item[Database:] armazena a maior parte do estado de execução e do estado de construção da infraestrutura da Nuvem. Por exemplo, o Database fornece informação das instancias que estão disponíveis para uso e em uso, redes disponíveis e informação de armazenamento. O Nova, teoricamente, suporta qualquer banco de dados baseado em SQL, mas os bancos de dados mais usados são sqlite3, MySQL e PostgresSQL.
+
+\end{description}
+
+Todos os componentes da arquitetura do OpenStack seguem uma política \textit{shared-nothing} baseada em mensagens. \textit{Shared-nothing} significa que cada componente de cada grupo de componentes pode ser instalado em qualquer servidor, de maneira distribuida, enquanto que ser baseado em mensagens garente que a comunicação entre todos os componentes seja realizada através de uma fila de mensagens. 
+
+\subsubsection{Rede (Neutron)}
+
+O componente de rede de qualquer plataforma na Nuvem tem funções importantes: (1) oferecer acessibilidade aos recursos e serviços, (2) prover a ligação dos endereços entre diferentes serviços e (3) configurar automaticamente a rede.
+
+A arquitetura do Neutron consiste em quatro redes físicas distintas:
+
+\begin{description}
+
+	\item[Rede de Gerenciamento:] usada para comunicação interna entre os componentes do OpenStack. 
+
+	\item[Rede de Dados:] usada para comunicação com VMS relacionada a dados na Nuvem.
+
+	\item[Rede Externa:] usada para prover acesso a Internet à VMs.
+
+	\item[Rede da API:] expõe todas APIs do OpenStack.
+
+\end{description}
+
+
+\subsubsection{Armazenamento}
+
+O componente de armazenamento tem como finalidade gerenciar os recursos armazenados. OpenStack tem suporte tanto para Armazenamento de Objetos quanto para Armazenamento de Bloco.
+
+O Swift, componente responsável pelo armazenamento de objetos, provê uma API de acesso a plataforma que pode ser integrada diretamente com aplicações ou utilizada para \textit{backup}, arquivamento e retenção de dados (REF). No armazenamento de objetos os dados são salvos em multiplos dispositivos de hardware, o OpenStack fica responsável por garantir a replicação dos dados e a integridade entre os \textit{clusters}. 
+
+O armazenamento de bloco é responsabilidade do componente chamado de Cinder. Por gerenciar os recursos de armazenamento em blocos, o armazenamento em bloco é apropriado para cenários que precisam de desempenho como armazenamento de banco de dados.
+
+\subsubsection{Interface Gráfica (Horizon)}
+
+O OpenStack fornece uma interface gráfica tanto para usuários quanto para administradores, capaz de controlar os recursos de computação, armazenamento e rede. Através do Horizon os administradores podem gerenciar os usuários e os limites de acesso para cada usuário.
+
+\subsubsection{Serviços Compartilhados}
+
+Os Serviços Compartilhados do OpenStack é um conjunto de serviços presentes nos 3 principais módulos do OpenStack com o objetivo de facilitar as operações de gerenciamento da Nuvem. Serviços como de identidade, de imagem, de telemetria, de orquestração e de banco de dados (REF):
+
+\begin{description}
+
+	\item[Serviço de identidade (Keystone):] é o serviço de sergurança, usado para proteger o acesso e uso dos recursos.
+
+	\item[Serviço de Imagem (Glance):] é o repositório para discos virtuais e das imagens usadas pelas VMs.
+
+	\item[Serviço de Telemetria (Ceilometer):] capaz de analizar a utilização dos recursos e a performace dos serviços do OpenStack.
+
+	\item[Serviço de Orquestração (Heat):] permite que os desenvolvedores de aplicações descrevam e automatizem o lançamento de infraestruturas na Nuvem.
+
+	\item[Serviço de Banco de Dados (Trove):] permite que usuários utilizem as características dos banco de dados relacionais. Usuários e administradores de banco de dados podem criar e gerenciar multiplas instancias de banco de dados.
+
+\end{description}
+
+\subsubsection{Propriedades}
+
+O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar estar diretamente ligado a tecnologias específicas e fornecer ao usuário a liberdade de escolher as tecnologias que melhor se encaixam as suas necessidades (REF). Abaixo é feita uma analise sobre as principais propriedades do OpenStack.
+
+\begin{description}
+
+	\item[\textit{Live migration}:] O OpenStack suporta dois tipos de \textit{live migration}: baseada em armazenamento compartilhado e \textit{live migration} por bloco.
+
+	\item[Balanceamento de carga:] O OpenStack suporta balanceamento de carga em diferentes niveis. A propriedade de \textit{live migration} permitiu que os administradores do sistema distribuam as cargas de trabalho entre os servidores físicos através do ajuste da localização da VM. Além disso, é possível controlar as cargas de trabalho a nível de VM. O OpenStack tem um projeto em desenvolvimento chamado Load Balancing as a Service (LBaaS) que tem objetivo fornecer um serviço de balanceamento de carga para usuário final.
+
+	\item[Tolerância a falhas:] a tolerância  falhas também pode ser feita em diferentes niveis, dependendo da maneira que o IaaS foi configurado. No nível de VM, com objetivo de prever falhas, o usuário pode desenvolver algoritmos de escalonamento (além dos três já existentes). A nível de armazenamento e de banco de dados, a tolerância a falhas é alcançada através da replicação e sincronização garantindo que a falha em um dispositivo não pare todo sistema.
+
+	\item[Disponibilidade:] 
+
+	\item[Segurança:] OpenStack tem um serviço separado (Keystone) que fornece um gerenciamento central de autenticação para os usuários e o sistema operacional da nuvem.
+
+	\item[Compatibilidade:] o OpenStack é compatível com o Amazon EC2 e Amazon S3. As aplicações de cliente feitas para a Amazon Web Service podem ser usadas com OpenStack apartir de um esforço mínimo (REF). O OpenStack tem suporte para vários \textit{hypervisors}: Xen, KVM, HyperV, VMWare, etc.
+
+\end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CloudStack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Eucalyptus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{OpenNebula}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nimbus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
