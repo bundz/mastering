@@ -1,19 +1,36 @@
 \chapter{Plataformas da Nuvem de Código Aberto}
 
-As Plataformas da Nuvem de Código Aberto foram criadas com a intenção de suprir a necessidade de que as soluções IaaS forneçam privacidade e controle sobre os ambientes virtualizados (REF). Portanto essas plataformas eram usadas principalmente para contruir Nuvens privadas. Atualmente elas são utilizadas para Nuvens públicas, privadas e hibridas. Com o aparecimento de diferentes Plataformas da Nuvem de Código Aberto, mesmo tendo as caracteristicas específicas de cada plataforma, escolher a mais adequada é uma tarefa complicada (REF).
+As Plataformas da Nuvem de Código Aberto foram criadas com a intenção de suprir a necessidade de que as soluções IaaS forneçam privacidade e controle sobre os ambientes virtualizados~\cite{Barkat:2015}. Portanto essas plataformas eram usadas principalmente para contruir Nuvens privadas. Atualmente elas são utilizadas para Nuvens públicas, privadas e hibridas. Com o aparecimento de diferentes Plataformas da Nuvem de Código Aberto, mesmo tendo as caracteristicas específicas de cada plataforma, escolher a mais adequada é uma tarefa complicada~\cite{Barkat:2015}.
 
-Muitos trabalhos foram desenvolvidos com objetivos de comparar as diferentes soluções para IaaS. A tabela (REF) apresenta os trabalhos que comparam as soluções para nuvem, destacando as soluções analisadas, suas limitações e foco.
+Muitos trabalhos foram desenvolvidos com objetivos de comparar as diferentes soluções para IaaS. A tabela~\ref{researchesTable} apresenta os trabalhos que comparam as soluções para nuvem, destacando as soluções analisadas, suas limitações e foco.
 
 %%TABELA A FAZERRR
-\begin{tabular}{|l | p{5.5cm} | p{5.5cm}|}
-	\hline
-	Trabalho & Plataformas Analisadas & Foco/Limitação \\
-	Voras et. al.(REF) & OpenNebula, Eucalyptus, Ubuntu Enterprise Cloud, openQRM, Abiquo, Red Hat Cloud Foundations, OpenStack, Nimbus and mOSAIC & Breve introdução sobre cada solução, nenhuma comparação fornecida.
-	\tabularnewline
+\begin{table}
+  \begin{center}
+    \caption{Comparação dos estudos sobre as plataformas da Nuvem}\label{researchesTable}
+    \begin{tabular}{|p{4cm}|p{6cm}|p{5cm}|}
+      \hline
+      Estudo & Plataformas Analisadas & Foco/Limitação\\
+      \hline
+      {\small Voras et. al.~\citeyearpar{Voras:2011}} & {\small Open Nebula, Eucalyptus, Ubuntu Enterprise Cloud, openQRM, Abiquo, Red Hat Cloud Foundation, OpenStack, Nimbus e mOSAIC} & {\small Breve introdução das plataformas, nenhuma comparação fornecida}\\
+      \hline
+      {\small Zeng et. al.~\citeyearpar{Zeng:2012}} & {\small Amazon EC2, IBM smart cloud, Google App Engine, Windows Azure, Hadoop, Eucalyptus, OpenNebula e Nimbus} & {\small Breve introdução das plataformas, nenhuma comparação fornecida}\\
+      \hline
+      {\small Endo et. al.~\citeyearpar{Endo:2010}} & {\small XCP, Nimbus, OpenNebula, Eucalyptus, TPlataform, ECP (Enomalys Elastic Computing) e Apaches VCL} & {\small Breve introdução das plataformas e breve comparação fornecida}\\
+      \hline
+      {\small Amrani et. al.~\citeyearpar{Amrani:2012}} & {\small Eucalyptus, OpenNebula e Nimbus} & {\small Limitado às novas características e à aparência}\\
+      \hline
+      {\small Von Laszewski et. al.~\citeyearpar{Laszewski:2012}} & {\small Eucalyptus, OpenNebula, Nimbus e OpenStack} & {\small Foco em escalabilidade}\\
+      \hline
+      {\small Cordeiro et. al.~\citeyearpar{Cordeiro:2010}} & {\small XCP, Eucalyptus e OpenNebula} & {\small Foco na arquitetura das plataformas e na rede}\\
+      \hline
+      {\small Baset~\citeyearpar{Baset:2012}} & {\small OpenStack e CloudStack} & {\small Detalhes aprofundados apenas para o OpenStack}\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
 
-\end{tabular}
-
-Alguns trabalhos analizaram algumas soluções mais profundamente considerando um ponto de vista específico. (REF) foca na aparência e nas features, enquanto que (REF) foca em comparar a escalabilidade das plataformas e (REF) nas placement policies, arquitetura das plataformas e na estrutura de rede das plataformas analisadas. (REF) detalha sobre o OpenStack e o CloudStack, porém apenas o OpenStack é analisado profundamente.
+Alguns trabalhos analizaram algumas soluções mais profundamente considerando um ponto de vista específico. Amrani et. al.~\citeyearpar{Amrani:2012} foca na aparência e nas features, enquanto que Laszewski et. al.~\citeyearpar{Laszewski:2012} foca em comparar a escalabilidade das plataformas e Cordeiro et. al.~\citeyearpar{Cordeiro:2010} nas placement policies, arquitetura das plataformas e na estrutura de rede das plataformas analisadas. Baser~\citeyearpar{Baset:2012} detalha sobre o OpenStack e o CloudStack, porém apenas o OpenStack é analisado profundamente.
 
 Esse capítulo tem como objetivo analisar 5 soluções de código aberto para IaaS: OpenStack, CloudStack, OpenNebula, Eucalyptus e Nimbus e comparar suas características.
 
@@ -21,7 +38,7 @@ Esse capítulo tem como objetivo analisar 5 soluções de código aberto para Ia
 \section{OpenStack}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-OpenStack é um software pra Nuvem que oferece a capacidade de controlar uma enorme quantidade de recursos de computação, de rede e de armazenamento. Ele ainda prove ao usuário recursos sob demanda (REF). O desenvolvimento do OpenStack começou em 2010, inicialmente sendo desenvolvido pela Rackspace Hosting e pela NASA (REF) com o objetivo de prover uma solução de código aberto para construção de Nuvens privadas. A missão do OpenStack é permitir que qualquer organização crie e ofereça serviços de Computação em Nuvem. Disponível como uma solução de código aberto, o OpenStack foi construido com 4 princípios em mente:
+OpenStack é um software pra Nuvem que oferece a capacidade de controlar uma enorme quantidade de recursos de computação, de rede e de armazenamento. Ele ainda prove ao usuário recursos sob demanda~\cite{OpenStackIntro:Online}. O desenvolvimento do OpenStack começou em 2010, inicialmente sendo desenvolvido pela Rackspace Hosting e pela NASA~\cite{OpenStack:Online} com o objetivo de prover uma solução de código aberto para construção de Nuvens privadas. A missão do OpenStack é permitir que qualquer organização crie e ofereça serviços de Computação em Nuvem. Disponível como uma solução de código aberto, o OpenStack foi construido com 4 princípios em mente:
 
 \begin{description}
 
@@ -41,11 +58,11 @@ A primeira versão do OpenStack se chamava Austin e foi lançada em outubro de 2
 
 Como em qualquer outro plataforma para Nuvem, a infraestrutura por baixo do OpenStack é formada por hardware padrão, que pode conter qualquer peça de dispositivos físicos como servidores, discos ou dispositivos de rede. No intuito de prover serviços na nuvem, o OpenStack desenvolveu camadas de virtualização, promovendo uma abstração da infraestrutura física para o usuário final. Essas camadas de virtualização são desenvolvidas numa arquitetura multicomponente.
 
-A arquitetura do OpenStack consiste em 3 componentes principais: computação (Nova), rede (Neutron) e armazenamento (Swift). Além desses 3 componentes, o OpenStack vem desenvolvendo muitos outros serviços, projetados para trabalharem juntos para prover uma solução IaaS completa. A integração desses serviços é facilitada através de APIs (\textit{application programming interfaces}) que são fornecidas por cada serviço (REF).
+A arquitetura do OpenStack consiste em 3 componentes principais: computação (Nova), rede (Neutron) e armazenamento (Swift). Além desses 3 componentes, o OpenStack vem desenvolvendo muitos outros serviços, projetados para trabalharem juntos para prover uma solução IaaS completa. A integração desses serviços é facilitada através de APIs (\textit{application programming interfaces}) que são fornecidas por cada serviço~\cite{OpenStack:Online}.
 
 \subsubsection{Computação (Nova)}
 
-O componente de computação, de codinome Nova e escrito em Python, é responsável por gerenciar grandes redes de VMs e eventualmente por escalonar as VMs entre as máquinas físicas disponíveis (REF). O Nova é uma aplicação distribuída que consiste em 6 componentes: Nova-api, Message Queue, Nova-Compute, Nova-Network, Nova-Volume e Nova-Scheduler. O Nova suporta o ciclo-de-vida completo de uma instância na Nuvem, desde a requisição para inicializar uma VM até seu término. Os seis componentes são detalhados abaixo:
+O componente de computação, de codinome Nova e escrito em Python, é responsável por gerenciar grandes redes de VMs e eventualmente por escalonar as VMs entre as máquinas físicas disponíveis~\cite{OpenStack:Online}. O Nova é uma aplicação distribuída que consiste em 6 componentes: Nova-api, Message Queue, Nova-Compute, Nova-Network, Nova-Volume e Nova-Scheduler. O Nova suporta o ciclo-de-vida completo de uma instância na Nuvem, desde a requisição para inicializar uma VM até seu término. Os seis componentes são detalhados abaixo:
 
 \begin{description}
 
@@ -90,7 +107,7 @@ A arquitetura do Neutron consiste em quatro redes físicas distintas:
 
 O componente de armazenamento tem como finalidade gerenciar os recursos armazenados. OpenStack tem suporte tanto para Armazenamento de Objetos quanto para Armazenamento de Bloco.
 
-O Swift, componente responsável pelo armazenamento de objetos, provê uma API de acesso a plataforma que pode ser integrada diretamente com aplicações ou utilizada para \textit{backup}, arquivamento e retenção de dados (REF). No armazenamento de objetos os dados são salvos em multiplos dispositivos de hardware, o OpenStack fica responsável por garantir a replicação dos dados e a integridade entre os \textit{clusters}. 
+O Swift, componente responsável pelo armazenamento de objetos, provê uma API de acesso a plataforma que pode ser integrada diretamente com aplicações ou utilizada para \textit{backup}, arquivamento e retenção de dados~\cite{OpenStack:Online}. No armazenamento de objetos os dados são salvos em multiplos dispositivos de hardware, o OpenStack fica responsável por garantir a replicação dos dados e a integridade entre os \textit{clusters}. 
 
 O armazenamento de bloco é responsabilidade do componente chamado de Cinder. Por gerenciar os recursos de armazenamento em blocos, o armazenamento em bloco é apropriado para cenários que precisam de desempenho como armazenamento de banco de dados.
 
@@ -100,7 +117,7 @@ O OpenStack fornece uma interface gráfica tanto para usuários quanto para admi
 
 \subsubsection{Serviços Compartilhados}
 
-Os Serviços Compartilhados do OpenStack é um conjunto de serviços presentes nos 3 principais módulos do OpenStack com o objetivo de facilitar as operações de gerenciamento da Nuvem. Serviços como de identidade, de imagem, de telemetria, de orquestração e de banco de dados (REF):
+Os Serviços Compartilhados do OpenStack é um conjunto de serviços presentes nos 3 principais módulos do OpenStack com o objetivo de facilitar as operações de gerenciamento da Nuvem. Serviços como de identidade, de imagem, de telemetria, de orquestração e de banco de dados~\cite{OpenStack:Online}:
 
 \begin{description}
 
@@ -118,7 +135,7 @@ Os Serviços Compartilhados do OpenStack é um conjunto de serviços presentes n
 
 \subsubsection{Propriedades}
 
-O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar estar diretamente ligado a tecnologias específicas e fornecer ao usuário a liberdade de escolher as tecnologias que melhor se encaixam as suas necessidades (REF). Abaixo é feita uma analise sobre as principais propriedades do OpenStack.
+O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar estar diretamente ligado a tecnologias específicas e fornecer ao usuário a liberdade de escolher as tecnologias que melhor se encaixam as suas necessidades~\cite{OpenStack:Online}. Abaixo é feita uma analise sobre as principais propriedades do OpenStack.
 
 \begin{description}
 
@@ -132,7 +149,7 @@ O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar est
 
 	\item[Segurança:] OpenStack tem um serviço separado (Keystone) que fornece um gerenciamento central de autenticação para os usuários e o sistema operacional da nuvem.
 
-	\item[Compatibilidade:] o OpenStack é compatível com o Amazon EC2 e Amazon S3. As aplicações de cliente feitas para a Amazon Web Service podem ser usadas com OpenStack apartir de um esforço mínimo (REF). O OpenStack tem suporte para vários \textit{hypervisors}: Xen, KVM, HyperV, VMWare, etc.
+	\item[Compatibilidade:] o OpenStack é compatível com o Amazon EC2 e Amazon S3. As aplicações de cliente feitas para a Amazon Web Service podem ser usadas com OpenStack apartir de um esforço mínimo~\cite{OpenStack:Online}. O OpenStack tem suporte para vários \textit{hypervisors}: Xen, KVM, HyperV, VMWare, etc.
 
 \end{description}
 
