@@ -4,7 +4,6 @@ As Plataformas da Nuvem de Código Aberto foram criadas com a intenção de supr
 
 Muitos trabalhos foram desenvolvidos com objetivos de comparar as diferentes soluções para IaaS. A tabela~\ref{researchesTable} apresenta os trabalhos que comparam as soluções para nuvem, destacando as soluções analisadas, suas limitações e foco.
 
-%%TABELA A FAZERRR
 \begin{table}
   \begin{center}
     \caption{Comparação dos estudos sobre as plataformas da Nuvem}\label{researchesTable}
@@ -32,7 +31,7 @@ Muitos trabalhos foram desenvolvidos com objetivos de comparar as diferentes sol
 
 Alguns trabalhos analizaram algumas soluções mais profundamente considerando um ponto de vista específico. Amrani et. al.~\citeyearpar{Amrani:2012} foca na aparência e nas features, enquanto que Laszewski et. al.~\citeyearpar{Laszewski:2012} foca em comparar a escalabilidade das plataformas e Cordeiro et. al.~\citeyearpar{Cordeiro:2010} nas placement policies, arquitetura das plataformas e na estrutura de rede das plataformas analisadas. Baser~\citeyearpar{Baset:2012} detalha sobre o OpenStack e o CloudStack, porém apenas o OpenStack é analisado profundamente.
 
-Esse capítulo tem como objetivo analisar 5 soluções de código aberto para IaaS: OpenStack, CloudStack, OpenNebula, Eucalyptus e Nimbus e comparar suas características.
+Esse capítulo tem como objetivo fazer um estudo sobre as soluções de código aberto para IaaS, onde será feito um estudo mais aprofundado sobre o software OpenStack.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{OpenStack}
@@ -145,8 +144,6 @@ O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar est
 
 	\item[Tolerância a falhas:] a tolerância  falhas também pode ser feita em diferentes niveis, dependendo da maneira que o IaaS foi configurado. No nível de VM, com objetivo de prever falhas, o usuário pode desenvolver algoritmos de escalonamento (além dos três já existentes). A nível de armazenamento e de banco de dados, a tolerância a falhas é alcançada através da replicação e sincronização garantindo que a falha em um dispositivo não pare todo sistema.
 
-	\item[Disponibilidade:] 
-
 	\item[Segurança:] OpenStack tem um serviço separado (Keystone) que fornece um gerenciamento central de autenticação para os usuários e o sistema operacional da nuvem.
 
 	\item[Compatibilidade:] o OpenStack é compatível com o Amazon EC2 e Amazon S3. As aplicações de cliente feitas para a Amazon Web Service podem ser usadas com OpenStack apartir de um esforço mínimo~\cite{OpenStack:Online}. O OpenStack tem suporte para vários \textit{hypervisors}: Xen, KVM, HyperV, VMWare, etc.
@@ -155,27 +152,9 @@ O OpenStack é construido seguindo uma filosofia livre: no sentido de evitar est
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{CloudStack}
+%\section{CloudStack}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-O CloudStack é uma plataforma open source desenvolvida em Java, projetada para o desenvolvimento e gerenciamento da Nuvem como uma IaaS (REF). Ele agrega os recursos computacionais para a construção de nuvens privadas, públicas ou híbridas.
+%O CloudStack é uma plataforma open source desenvolvida em Java, projetada para o desenvolvimento e gerenciamento da Nuvem como uma IaaS (REF). Ele agrega os recursos computacionais para a construção de nuvens privadas, públicas ou híbridas.
 
-O CloudStack começou em 2008 com a empresa Cloud.com. Em maio de 2010 teve seu código aberto sob a licensa GNU General Public Lincense. A Citrix comprou o CloudStack em 2011 e em abril doou o CloudStack para Apache Software Foundation, onde foi relicensiado sob a licensa Apache 2.0 e aceito em um projeto de incubação. Desde de março de 2013, o CloudStack se tornou um \textit{Top Level Project of Apache}. Muitas empresas estão se baseando no CloudStack para construir e gerenciar suas infraestruturas da Nuvem (REF*). Entre essas companias estão: Nokia, Orange, Apple e Disney.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Eucalyptus}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{OpenNebula}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Nimbus}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
+%O CloudStack começou em 2008 com a empresa Cloud.com. Em maio de 2010 teve seu código aberto sob a licensa GNU General Public Lincense. A Citrix comprou o CloudStack em 2011 e em abril doou o CloudStack para Apache Software Foundation, onde foi relicensiado sob a licensa Apache 2.0 e aceito em um projeto de incubação. Desde de março de 2013, o CloudStack se tornou um \textit{Top Level Project of Apache}. Muitas empresas estão se baseando no CloudStack para construir e gerenciar suas infraestruturas da Nuvem (REF*). Entre essas companias estão: Nokia, Orange, Apple e Disney.
