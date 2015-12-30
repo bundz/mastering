@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc} % acentuacao
 \usepackage{graphicx} % para inserir figuras
 \usepackage{url}
+\usepackage{todo}
 
 \newcommand\refe[1]{\textcolor{blue}{\textbf{#1}}}
 \newcommand\gaaar[1]{\textcolor{red}{\textbf{#1}}}
@@ -18,10 +19,10 @@
 \advisor[Prof.~Dr.]{Pilla}{Maurício Lima}
 \coadvisor[Prof.~Dr.]{Pilla}{Laércio Lima}
 
-\keyword{palavrachave-um}
-\keyword{palavrachave-dois}
-\keyword{palavrachave-tres}
-\keyword{palavrachave-quatro}
+\keyword{Computação em Nuvem}
+\keyword{Processamento Distribuído}
+% \keyword{palavrachave-tres}
+% \keyword{palavrachave-quatro}
 
 \begin{document}
 
@@ -47,17 +48,17 @@
 \begin{abstract}
   Com o rápido desenvolvimento das tecnologias de processamento e de armazenamento, recursos computacionais ficaram mais baratos, mais poderosos e mais ubiquoamente disponíveis. Esta tendência tecnológica permitiu a realização de um novo modelo computacional chamado Computação em Nuvem, no qual recursos são oferecidos como serviços de utilidade geral que podem ser alocados e desalocados por usuários pela internet sob demanda. A emerção da Computação em Nuvem causou um grande impacto nas industrias de tecnologia da informação nos últimos anos.
 
-  Neste trabalho foi feito um estudo aprofundado sobre a Computação em Nuvem, onde foi estudado suas definições, principais características, os modelos de negócio, a arquitetura, os tipos de Nuvem e os principais desafios da área. Além desse estudo este trabalho também apresentou uma revisão sobre as Plataformas da Nuvem de Código Aberto, onde foi feito um estudo mais aprofundado sobre o software OpenStack. Sobre ele é apresentado seu histórico, sua arquitetura base e suas propriedades.
+  Neste trabalho foi feito um estudo sobre a Computação em Nuvem, focando em suas definições, principais características, os modelos de negócio, a arquitetura, os tipos de Nuvem e os principais desafios da área. Este trabalho também apresenta uma revisão sobre as Plataformas da Nuvem de Código Aberto, onde foi feito um estudo mais aprofundado sobre o software OpenStack. Sobre ele é apresentado seu histórico, sua arquitetura base e suas propriedades.
 
 \end{abstract}
-
+%Um Estudo Sobre Computação em Nuvem e Plataformas de Código Aberto da Nuvem
 \begin{englishabstract}%
-  {Titulo do Trabalho em Ingles}%
-  {keyword-one, keyword-two, keyword-three, keyword-four}
+  {A Study About Cloud Computing and Its Open Source Platforms}%
+  {Cloud Computing, Distributed Systems.}
   
 With the rapid development of processing and storage technologies and the success of the Internet, computing resources have become cheaper, more powerful and more ubiquitously available than ever before. This technological trend has enabled the realization of a new computing model called cloud computing, in which resources are provided as general utilities that can be leased and released by users through the Internet in an on-demand fashion.
 
-This paper presents a further study of Cloud Computing, its settings, main characteristics, business models, architecture, types of Cloud and the main challenges of the area. In addition to this study this work also presented a review of the Open Source Cloud Plataforms, where he made a further study on the OpenStack software. About OpenStack is presented its history, its base architecture and its properties.
+This paper presents a study of Cloud Computing, its definitions, main characteristics, business models, architectures, Cloud types,  and the main challenges of the area. This work also presents a review of Open Source Cloud Plataforms, with a further revision about OpenStack, where it is presented its history, its base architecture, and its properties.
 
   
 \end{englishabstract}
@@ -69,16 +70,17 @@ This paper presents a further study of Cloud Computing, its settings, main chara
 \listoftables
 
 %lista de abreviaturas e siglas
+\todo{Colocar na ordem alfabética. Todas palavras em língua estrangeira devem ser grifadas em itálico também.}
 \begin{listofabbrv}{SPMD}
-        \item[IaaS] Infrastructure-as-a-Service
-        \item[PaaS] Plataform-as-a-Service
-        \item[SaaS] Software-as-a-Service
-        \item[DaaS] Data-as-a-Service
-        \item[NIST] National Institute of Standards and Technology
-        \item[APIs] Application Programming Interfaces
-        \item[LBaaS] Load Balancing as a Service
-        \item[VM] Virtual Machine
-        \item[SLOs] Service Level Objectives
+        \item[IaaS] \emph{Infrastructure-as-a-Service}
+        \item[PaaS] \emph{Plataform-as-a-Service}
+        \item[SaaS] \emph{Software-as-a-Service}
+        \item[DaaS] \empbh{Data-as-a-Service}
+        \item[NIST] \emph{National Institute of Standards and Technology}
+        \item[APIs] \emph{Application Programming Interfaces}
+        \item[LBaaS] \emph{Load Balancing as a Service}
+        \item[VM] \emph{Virtual Machine}
+        \item[SLOs] \emph{Service Level Objectives}
 \end{listofabbrv}
 
 %Sumario
