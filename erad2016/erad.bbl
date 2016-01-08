@@ -1,0 +1,32 @@
+\begin{thebibliography}{}
+
+\bibitem[Barkat et~al. 2015]{Barkat:2015}
+Barkat, A., Diniz, d.~S., and S., I. (2015).
+\newblock Open source solutions for building iaas clouds.
+\newblock In {\em Scalable Computing: Practice and Experience}, Volume 16,
+  Number 2, pages 187--204. SCPE.
+
+\bibitem[CloudStack 2015]{CloudStack:Online}
+CloudStack (2015).
+\newblock Cloudstack website.
+\newblock \url{http://cloudstack.apache.org}.
+\newblock Acessado em: 15/10/2015.
+
+\bibitem[Eucalyptus 2015]{Eucalyptus:Online}
+Eucalyptus (2015).
+\newblock Eucalyptus website.
+\newblock \url{http://eucalyptus.com}.
+\newblock Acessado em: 15/10/2015.
+
+\bibitem[OpenStack 2015]{OpenStack:Online}
+OpenStack (2015).
+\newblock Openstack website.
+\newblock \url{http://openstack.org}.
+\newblock Acessado em: 15/10/2015.
+
+\bibitem[Zhang et~al. 2010]{stateOfArt:2010}
+Zhang, Q., Cheng, L., and Boutaba, R. (2010).
+\newblock Cloud computing: state-of-the-art and research challenges.
+\newblock {\em Journal of Internet Services and Applications}, 1(1):7--18.
+
+\end{thebibliography}
